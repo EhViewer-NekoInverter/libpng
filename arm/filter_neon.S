@@ -47,7 +47,6 @@
 .macro  func    name, export=0
     .macro endfunc
 ELF     .size   \name, . - \name
-        .endfunc
         .purgem endfunc
     .endm
         .text
@@ -62,7 +61,6 @@ ELF     .size   \name, . - \name
         .global \name
     .endif
 ELF     .type   \name, STT_FUNC
-        .func   \name
 \name:
 .endm
 
